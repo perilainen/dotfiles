@@ -4,3 +4,4 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
 alias lsa='ls -lah'
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
+alias dok='cd ~/Documents'
