@@ -98,5 +98,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh
 alias dgit="git --git-dir ~/.dotfiles/.git --work-tree=$HOME"
-alias ls="ls -GFh"
 alias lsa="ls -lah"
