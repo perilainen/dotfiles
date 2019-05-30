@@ -68,7 +68,7 @@ ZSH_THEME="pygmalion"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z colored-man colorize pip python brew osx zsh-syntax-highlighting)
+plugins=(git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,3 +98,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh
 alias dgit="git --git-dir ~/.dotfiles/.git --work-tree=$HOME"
+alias ls="ls -GFh"
+alias lsa="ls -lah"
