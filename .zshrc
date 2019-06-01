@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,8 +9,9 @@ export ZSH="/Users/perjohansson/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pygmalion"
-
+#ZSH_THEME="robbyrussell"
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -68,7 +70,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting)
+plugins=(git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,3 +101,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh
 alias dgit="git --git-dir ~/.dotfiles/.git --work-tree=$HOME"
 alias lsa="ls -lah"
+# Virtualenvwrapper things
+export WORKON_HOME=$HOME/.virtualenvs/
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history virtualenv)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH='1'
