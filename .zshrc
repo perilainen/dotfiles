@@ -110,3 +110,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history virtualenv)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH='1'
+setopt histignorealldups
+setopt histignorespace
