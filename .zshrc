@@ -13,6 +13,10 @@ export ZSH="/Users/perjohansson/.oh-my-zsh"
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 # Set list of themes to pick from when loading at random
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='yellow'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='red'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='red'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='black'
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
@@ -109,6 +113,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history virtualenv)
-POWERLEVEL9K_SHORTEN_DIR_LENGTH='1'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH='3'
 setopt histignorealldups
 setopt histignorespace
