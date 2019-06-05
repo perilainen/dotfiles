@@ -111,8 +111,34 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir newline vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history virtualenv)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH='3'
 setopt histignorealldups
 setopt histignorespace
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip3
+# pip zsh completion end
+
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip
+# pip zsh completion end
+
