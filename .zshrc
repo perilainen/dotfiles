@@ -74,7 +74,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting virtualenv)
+plugins=(git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting virtualenv docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,13 +105,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh
 alias dgit="git --git-dir ~/.dotfiles/.git --work-tree=$HOME"
 alias lsa="ls -lah"
+alias stxdistans="ssh -L 5000:stx.svt.se:443 smash.svt.se"
 # Virtualenvwrapper things
 export WORKON_HOME=$HOME/.virtualenvs/
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir newline vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history virtualenv)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH='3'
 setopt histignorealldups
