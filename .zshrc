@@ -74,7 +74,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting virtualenv docker)
+plugins=(docker git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting virtualenv docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 alias dgit="git --git-dir ~/.dotfiles/.git --work-tree=$HOME"
 alias lsa="ls -lah"
 alias stxdistans="ssh -L 5000:stx.svt.se:443 smash.svt.se"
+alias moln="ssh -t cli@sthlm.molnet.svt.se --"
 # Virtualenvwrapper things
 export WORKON_HOME=$HOME/.virtualenvs/
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
@@ -142,4 +143,5 @@ function _pip_completion {
 }
 compctl -K _pip_completion pip
 # pip zsh completion end
-
+fpath+=($ZSH/plugins/docker)
+autoload -U compinit && compinit
