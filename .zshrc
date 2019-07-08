@@ -4,7 +4,8 @@ export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/perjohansson/.oh-my-zsh"
-
+export GOPATH=/Users/perjohansson/Documents/go-workspace
+export PATH=$PATH:$GOPATH/bin
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -107,6 +108,17 @@ alias dgit="git --git-dir ~/.dotfiles/.git --work-tree=$HOME"
 alias lsa="ls -lah"
 alias stxdistans="ssh -L 5000:stx.svt.se:443 smash.svt.se"
 alias moln="ssh -t cli@sthlm.molnet.svt.se --"
+alias pip="pip3"
+alias d="dirs -v"
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
 # Virtualenvwrapper things
 export WORKON_HOME=$HOME/.virtualenvs/
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
@@ -145,3 +157,8 @@ compctl -K _pip_completion pip
 # pip zsh completion end
 fpath+=($ZSH/plugins/docker)
 autoload -U compinit && compinit
+
+function mountmeta(){
+	sshfs -o idmap=user root@$1:/ardome/fs0/hr /tmp/$1
+	cd /tmp/$1
+}
