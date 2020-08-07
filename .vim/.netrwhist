@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/perjohansson/SVT/tiebreak-services/pusher/src/components/SubtitleEditor'
+let g:netrw_dirhist_9='/Users/perjohansson/SVT/tiebreak-services/pusher/src/components'
+let g:netrw_dirhist_8='/Users/perjohansson/SVT/tiebreak-services/pusher/src'
+let g:netrw_dirhist_7='/Users/perjohansson/SVT/tiebreak-services/pusher'
+let g:netrw_dirhist_6='/Users/perjohansson/SVT/tiebreak-services'
+let g:netrw_dirhist_5='/Users/perjohansson/SVT/tiebreak-services/pusher/src/components/SubtitleEditor'
+let g:netrw_dirhist_4='/Users/perjohansson/SVT/tiebreak-services/pusher/src/components'
+let g:netrw_dirhist_3='/Users/perjohansson/SVT/tiebreak-services/pusher/src'
+let g:netrw_dirhist_2='/Users/perjohansson/SVT/tiebreak-services/pusher'
+let g:netrw_dirhist_1='/Users/perjohansson/SVT/tiebreak-services'

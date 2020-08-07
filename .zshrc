@@ -1,11 +1,15 @@
 export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/perjohansson/.oh-my-zsh"
-export GOPATH=/Users/perjohansson/Documents/go-workspace
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export SVT_NPM_EMAIL="per.a.johansson@svt.se"
+export SVT_NPM_READONLY_AUTH="bnBtLXJlYWRlci0yMDE5OnFGRkpoVndhdDNuNW5QTmJlN0cybTY5QnFadUdpSk56VFNnVmNXdWRjcHZRYnlzTGs1UUVYNDk4Z0RoZGZ2QjM="
+#export SVT_NPM_DEPLOY_AUTH="ZGVwbG95ZXItdW5kZXJ0ZXh0OlplU2lpcTYyU2hxY2hnUUtQYnI3UEhFTUgzOTN4RERMQUdLTnN1Qmd5UkVhWnJUbVU4azdXeDNMNkc5Yjh3ZG4K"
+export SVT_NPM_DEPLOY_AUTH="ZGVwbG95ZXItdW5kZXJ0ZXh0OlplU2lpcTYyU2hxY2hnUUtQYnI3UEhFTUgzOTN4RERMQUdLTnN1Qmd5UkVhWnJUbVU4azdXeDNMNkc5Yjh3ZG4="
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -75,8 +79,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting virtualenv docker-compose)
-
+plugins=(docker git z colored-man-pages colorize pip python brew osx zsh-syntax-highlighting virtualenv docker-compose kubectl golang)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -119,6 +122,7 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+alias startTB='cd "/Users/perjohansson/SVT/tiebreak-services" && docker-compose up & go run serve/cmd/server/main.go & sleep 5; go run flow/cmd/server/main.go &'
 # Virtualenvwrapper things
 export WORKON_HOME=$HOME/.virtualenvs/
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
@@ -162,3 +166,9 @@ function mountmeta(){
 	sshfs -o idmap=user root@$1:/ardome/fs0/hr /tmp/$1
 	cd /tmp/$1
 }
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source <(kubectl completion zsh | sed '/"-f"/d')
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
